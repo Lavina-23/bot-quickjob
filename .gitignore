@@ -1,19 +1,4 @@
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
-
-node_modules
-dist
-dist-ssr
-*.local
 
 # Logs
 
