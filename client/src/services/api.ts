@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
-console.log(API_URL);
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchVacancy = async () => {
   try {
-    const response = await axios.get(`${API_URL}/incoming`);
+    const response = await axios.post(`${API_URL}/post`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching jobs:", error);
+    console.error("Error fetching vacancies:", error);
   }
 };
