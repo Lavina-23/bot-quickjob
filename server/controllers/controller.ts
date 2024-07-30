@@ -36,3 +36,12 @@ export const createVacancy = async (req: Request, res: Response) => {
     }
   }
 };
+
+export const getVacancies = async (req: Request, res: Response) => {
+  try {
+    const vacancyData = await Vacancy.find();
+    res.json(vacancyData);
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+};
