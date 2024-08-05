@@ -9,7 +9,7 @@ const vacancySchema = new mongoose.Schema({
     required: true,
     type: String,
   },
-  sallary: {
+  salary: {
     required: true,
     type: Number,
   },

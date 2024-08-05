@@ -20,13 +20,13 @@ export const createVacancy = async (req: Request, res: Response) => {
     const vacancyData = new Vacancy({
       name: ProfileName,
       job_title: title,
-      sallary: fee,
+      salary: fee,
     });
 
     try {
       const vacancyToSave = await vacancyData.save();
       const resp = service.reply(
-        `Detail Lowongan: \nJob Title: ${vacancyData.job_title}\nSallary: ${vacancyData.sallary}\n Suwun lowongane cak 👍🏻`
+        `Detail Lowongan: \nJob Title: ${vacancyData.job_title}\nsalary: ${vacancyData.salary}\n Suwun lowongane cak 👍🏻`
       );
       res.type("text/xml").send(resp.toString());
     } catch (error: any) {
