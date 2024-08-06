@@ -1,16 +1,29 @@
 import { faArrowAltCircleDown } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-const Hero = ({ onScrollToVacancyList }) => {
+interface HeroProps {
+  onScrollToVacancyList: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onScrollToVacancyList }) => {
   return (
-    <div className="h-screen grid place-items-center">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold">Find Your Quick Job ✨</h1>
-        <p className="text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div className="h-screen grid place-items-center z-50 mesh-bg">
+      <div className="text-center grid justify-items-center">
+        <h1 className="text-[90px] font-bold text-blue">
+          Find Your Quick Job ✨
+        </h1>
+        <p className="text-lg font-medium max-w-4xl mb-2 text-blue">
+          Looking for part-time or odd jobs? Our website offers a wide range of
+          flexible opportunities to fit your schedule. Discover jobs that match
+          your skills and availability. Ready to find your next gig? Click the
+          button below to see the list of job openings!
         </p>
         <button onClick={onScrollToVacancyList}>
-          <FontAwesomeIcon icon={faArrowAltCircleDown} className="size-8" />
+          <FontAwesomeIcon
+            icon={faArrowAltCircleDown}
+            className="size-8 text-blue"
+          />
         </button>
       </div>
     </div>

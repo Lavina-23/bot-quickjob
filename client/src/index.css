@@ -6,4 +6,18 @@
 
 body {
   font-family: Lora;
+  background-image: radial-gradient(at 93.8% 120%, #8985ff 0px, transparent 40%),
+    radial-gradient(at 27% 29%, #ffffff 0px, transparent 50%);
+}
+
+@layer utilities {
+  .mesh-bg {
+    @apply bg-white z-30;
+    background-image: radial-gradient(
+        ellipse at center,
+        #8682ff 0%,
+        transparent 80%
+      ),
+      radial-gradient(ellipse at center, #ffffff 0%, transparent 80%);
+  }
 }
