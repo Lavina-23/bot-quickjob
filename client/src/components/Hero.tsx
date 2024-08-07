@@ -1,4 +1,4 @@
-import { faArrowAltCircleDown } from "@fortawesome/free-regular-svg-icons";
+import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
@@ -21,8 +21,8 @@ const Hero: React.FC<HeroProps> = ({ onScrollToVacancyList }) => {
         </p>
         <button onClick={onScrollToVacancyList}>
           <FontAwesomeIcon
-            icon={faArrowAltCircleDown}
-            className="size-8 text-blue"
+            icon={faCircleArrowDown}
+            className="size-10 text-blue"
           />
         </button>
       </div>
