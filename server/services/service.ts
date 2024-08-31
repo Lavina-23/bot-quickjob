@@ -5,9 +5,15 @@ const MessagingResponse = twiml.MessagingResponse;
 const client = new Twilio();
 
 class Service {
-  reply(message: string) {
-    const response = new MessagingResponse();
+  createResponse() {
+    return new MessagingResponse();
+  }
+
+  reply(response: twiml.MessagingResponse, message: string) {
     response.message(message);
+  }
+
+  toString(response: twiml.MessagingResponse) {
     return response.toString();
   }
 }
