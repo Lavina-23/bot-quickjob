@@ -4,17 +4,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { forwardRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useStoreVacancyDetails } from "../hooks/hooks";
 import { fetchVacancy } from "../services/api";
-
-interface Vacancy {
-  _id: string;
-  name: string;
-  job_title: string;
-  sallary: number;
-}
+import { Vacancy } from "../types/types";
 
 const VacancyList = forwardRef<HTMLDivElement>((_props, ref) => {
   const [vacancies, setVacancies] = useState<Vacancy[]>([]);
+  const { setShowVacancyDetails } = useStoreVacancyDetails();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getVacancies = async () => {
@@ -25,14 +23,21 @@ const VacancyList = forwardRef<HTMLDivElement>((_props, ref) => {
   }, []);
 
   return (
-    <section ref={ref} className="mb-5 px-[10rem]">
-      <ul className="grid grid-cols-3 gap-10">
-        {vacancies.length > 0 ? (
+    <section
+      ref={ref}
+      className="py-10 px-[10rem] mesh-bg-right cursor-default"
+    >
+      <ul className="grid grid-cols-4 gap-5">
+        {vacancies && vacancies.length > 0 ? (
           vacancies.map((vacancy) => (
-            <div className="hover:bg-yellow rounded-lg hover:border hover:border-blue back-card-hover">
+            <div className="back-card-hover rounded-lg hover:border hover:bg-yellow hover:border-blue">
               <li
                 key={vacancy._id}
-                className="w-full p-5 z-50 rounded-lg border border-blue bg-white card-hover"
+                onClick={() => {
+                  setShowVacancyDetails(vacancy);
+                  navigate("/detail-vacancy/" + vacancy._id);
+                }}
+                className="w-full p-5 z-50 rounded-lg border border-blue bg-white card-hover hover:mb-[-2px]"
               >
                 <h3 className="font-bold text-xl text-blue">
                   {vacancy.job_title}

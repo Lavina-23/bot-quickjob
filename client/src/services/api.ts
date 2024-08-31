@@ -9,5 +9,6 @@ export const fetchVacancy = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching vacancies:", error);
+    return null;
   }
 };

@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import Hero from "./components/Hero";
-import VacancyList from "./components/VacancyList";
+import Hero from "../components/Hero";
+import VacancyList from "../components/VacancyList";
 
-const App = () => {
+const Home = () => {
   const vacancyListRef = useRef<HTMLDivElement>(null);
 
   const handleScrollTo = () => {
@@ -19,4 +19,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
